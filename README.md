@@ -4,6 +4,12 @@ A front-end demonstration of how MICA Educational Co. Pvt. Ltd.'s website could 
 
 This prototype was developed from the website audit of MICA's existing website. It is a proposed redesign, not a replacement for the live website.
 
+## Live demo
+
+**Deployed prototype:** https://micaprototype.netlify.app/
+
+The link above opens the front-end demonstration hosted on Netlify. It is a prototype for review and is not MICA's official production website.
+
 ## 1. Why this prototype was created
 
 The audit identified a few issues that could make it difficult for a first-time visitor to understand and use the existing website:
@@ -201,11 +207,18 @@ Possible backend work:
 
 This is a suggested future direction, not functionality included in the current prototype.
 
-## 9. Deployment notes
+## 9. Deployment
 
-The application currently uses `BrowserRouter`, and the Vite configuration uses the root base path. A production host must therefore serve `index.html` for application routes such as `/for/schools` and `/enquiry`.
+The prototype is deployed on Netlify:
 
-The repository includes a `public/_redirects` file intended for hosts that support Netlify-style redirect rules. Confirm the hosting provider's routing configuration before deployment. The current redirect file alone does not guarantee compatibility with every static host.
+- **Live demo:** https://micaprototype.netlify.app/
+- **Hosting platform:** Netlify
+- **Build command:** `npm run build`
+- **Publish directory:** `dist`
+
+The application uses `BrowserRouter`, and the Vite configuration uses the root base path. The production host must serve `index.html` for application routes such as `/for/schools` and `/enquiry`, including when a visitor opens or refreshes one of those routes directly.
+
+The repository includes `public/_redirects` with a Netlify-style single-page application fallback rule. Netlify uses this rule to send route requests to the application entry point. If you deploy to another static host, configure its equivalent fallback behaviour.
 
 ## 10. Before presenting or publishing
 
@@ -221,6 +234,6 @@ The repository includes a `public/_redirects` file intended for hosts that suppo
 
 ---
 
-**Project status:** Front-end redesign prototype for review.  
+**Project status:** Front-end redesign prototype deployed for review at https://micaprototype.netlify.app/.  
 **Backend status:** Not implemented.  
 **Enquiry delivery:** Simulated only; no enquiry is sent to MICA.
